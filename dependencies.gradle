@@ -1,0 +1,35 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+//Libraries
+def butterKnifeVersion = '10.0.0'
+def junitVersion = '4.12'
+def okHttpVersion = '3.9.1'
+def okioVersion = '1.13.0'
+def fastjsonVersion = '1.1.67.android'
+def picassoVersion = '2.5.2'
+def gsonVersion = '2.2.2'
+def glideVersion = '4.10.0'
+def kotlin_version = '1.3.10'
+
+project.ext {
+
+    dependencies = [
+            butterKnife:             "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler:     "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            butterknifeGradlePlugin: "com.jakewharton:butterknife-gradle-plugin:${butterKnifeVersion}",
+            okHttp:                  "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okio:                    "com.squareup.okio:okio:${okioVersion}",
+            fastjson:                "com.alibaba:fastjson:${fastjsonVersion}",
+            junit:                   "junit:junit:${junitVersion}",
+            picasso:                 "com.squareup.picasso:picasso:${picassoVersion}",
+            gson:                    "com.google.code.gson:gson:${gsonVersion}",
+            glide:                   "com.github.bumptech.glide:glide:${glideVersion}",
+            glideCompiler:           "com.github.bumptech.glide:compiler:${glideVersion}",
+            glideOkhttp3:            "com.github.bumptech.glide:okhttp3-integration:${glideVersion}@aar",
+            kotlin_version:          "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlin_version}",
+    ]
+}

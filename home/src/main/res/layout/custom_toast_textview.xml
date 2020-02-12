@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="6dip"
+    android:paddingTop="6dip"
+    android:paddingLeft="15dip"
+    android:paddingRight="15dip"
+    android:layout_marginLeft="30dip"
+    android:layout_marginRight="30dip"
+    android:textColor="@color/white"
+    android:textSize="14sp"
+    android:background="@color/transparent" />
+
+    <!--android:textColor="@color/jc_analysis_text_selector"android:background="@drawable/jc_analysis_title_selector"-->

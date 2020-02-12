@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="15dp"
+        android:paddingTop="16dp">
+
+        <ImageView
+            android:id="@+id/ic_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_siji" />
+
+        <TextView
+            android:id="@+id/tv_from_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@+id/ic_logo"
+            android:text="大连 普兰店区 → 成都 都江堰市 "
+            android:textColor="@color/stock_top_default_color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_from_to"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/ic_logo"
+            android:text="长12米  高栏  螺纹钢 2车"
+            android:textColor="@color/home_text_gray"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="14dp">
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="防雨防潮,走高速"
+            android:textColor="@color/color_gray_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tip"
+            android:layout_marginTop="10dp"
+            android:text="3000.00 元/车"
+            android:textColor="@color/red"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv_bid_grab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_price"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_qiang" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="13dp">
+
+        <TextView
+            android:id="@+id/tv_pack_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="装货时间：9月5日 9:00-15:00" />
+
+        <TextView
+            android:id="@+id/tv_pub_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
+            android:text="3天前" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#f2f2f2" />
+</LinearLayout>

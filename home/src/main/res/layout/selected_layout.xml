@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<EditText
+        android:id="@+id/edit_query"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/orange"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/topBackBtn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/backImageView"
+                    android:layout_width="9dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/top_back" />
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                app:queryHint="搜索"
+                android:layout_centerInParent="true"
+                android:background="@drawable/search_bg">
+
+            </androidx.appcompat.widget.SearchView>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+   <RelativeLayout
+       android:id="@+id/allCityLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/toolbar">
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recy_city"
+           android:background="@android:color/white"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"/>
+
+       <TextView
+           android:id="@+id/contact_dialog"
+           android:layout_width="80.0dip"
+           android:layout_height="80.0dip"
+           android:layout_centerInParent="true"
+           android:background="@color/orange"
+           android:gravity="center"
+           android:textColor="#ffffffff"
+           android:textSize="30sp"
+           android:visibility="invisible" />
+
+       <com.zgw.home.view.SideBar
+           android:id="@+id/contact_sidebar"
+           android:layout_width="20dp"
+           android:layout_height="match_parent"
+           android:layout_alignParentRight="true"
+           android:layout_centerVertical="true"
+           android:layout_marginRight="3dp" />
+
+       <ListView
+           android:id="@+id/searchList"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:visibility="gone">
+
+       </ListView>
+   </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/queryList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:divider="@color/transparent"
+        android:visibility="gone">
+
+    </ListView>
+</RelativeLayout>

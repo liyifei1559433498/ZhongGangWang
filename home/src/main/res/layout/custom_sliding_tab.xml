@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/custom_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:gravity="center"
+        android:maxLines="1"
+        android:lines="1"
+        android:textColor="@color/sliding_tab_text_selector"
+        android:textSize="15sp">
+    </TextView>
+</FrameLayout>

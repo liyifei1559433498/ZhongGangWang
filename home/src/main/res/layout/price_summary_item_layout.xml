@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shapeui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.zgw.base.component.ShapeBackGroundView
+        android:id="@+id/itemLayout"
+        android:layout_width="162dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        shapeui:bottomLeftRadius="8dp"
+        shapeui:bottomRightRadius="8dp"
+        shapeui:solidColor="@color/white"
+        shapeui:topLeftRadius="8dp"
+        shapeui:topRightRadius="8dp"
+        shapeui:touchSolidColor="@color/white">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/baicai_icon" />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="钢材"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+
+    </com.zgw.base.component.ShapeBackGroundView>
+</LinearLayout>

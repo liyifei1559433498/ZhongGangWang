@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/orange"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:text="物流"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="19dp">
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_huoyuan"
+            android:text="货源大厅" />
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_yundan"
+            android:text="运单管理" />
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_fadan"
+            android:text="货主发单" />
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_tixing"
+            android:text="消息提醒" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_shoukuan"
+            android:text="运费收款" />
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_renzheng"
+            android:text="会员认证" />
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_siji"
+            android:text="司机车辆管理" />
+
+        <TextView
+            style="@style/horizontal_weight"
+            android:drawableTop="@drawable/icon_bangzhu"
+            android:text="帮助" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="8dp">
+
+        <View
+            android:id="@+id/short_line"
+            style="@style/shore_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@+id/short_line"
+            android:text="货源大厅"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@drawable/more_1x"
+            android:text="更多" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_of_logistic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_of_logistics"
+        />
+</LinearLayout>

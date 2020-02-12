@@ -1,0 +1,184 @@
+ext.mainApp = true //标记为主app module
+apply from: rootProject.file('cc-settings-2.gradle')
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dexOptions {
+//        incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/MANIFEST.MF'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/maven/com.squareup.okhttp/okhttp/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okhttp/okhttp/pom.properties'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    signingConfigs {
+
+        debug {
+            // No debug config
+            keyAlias 'AndroidDebugKey'
+            keyPassword 'abc123456'
+            storeFile file('../debug.keystore')
+            storePassword 'abc123456'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+        release {
+            keyAlias 'netsteel'
+            keyPassword 'abc123456'
+            storeFile file('../robsteel.jks')
+            storePassword 'abc123456'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+            //说明so的路径为该libs路径，关联所有地图SDK的so文件
+        }
+    }
+
+    sourceSets.debug {
+        manifest.srcFile 'config/debug/AndroidManifest.xml'
+    }
+
+    sourceSets.release {
+//        manifest.srcFile 'config/debug/AndroidManifest.xml'
+        manifest.srcFile 'config/release/AndroidManifest.xml'
+    }
+
+    defaultConfig {
+        applicationId "com.steelnet.activity"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        signingConfig signingConfigs.release
+
+        vectorDrawables.useSupportLibrary = true
+
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "default_channel"]
+        manifestPlaceholders = [ChannelID: "default_channel"]
+        multiDexEnabled true
+        buildConfigField "String", "PLATFORM", "\"all\""
+        flavorDimensions "default"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true    //加上这行即可
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' , 'x86' //, 'x86_64', 'arm64-v8a','armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            versionNameSuffix "_debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            // 不显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            zipAlignEnabled false
+            // 移除无用的resource文件
+//            shrinkResources false
+            proguardFiles 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->  // each 改为 all
+                    outputFileName = "zhonggangwang_${defaultConfig.versionName}_${rootProject.ext.productName}.apk"
+
+                }
+            }
+        }
+    }
+
+    afterEvaluate {
+        tasks.matching {
+            it.name.startsWith('dex')
+        }.each { dx ->
+            if (dx.additionalParameters == null) {
+                dx.additionalParameters = ['--multi-dex']
+            } else {
+                dx.additionalParameters += '--multi-dex'
+            }
+        }
+    }
+
+    task nativeLibsToJar(type: Zip, description: "create a jar archive of the native libs") {
+        destinationDir file("$projectDir/libs")
+        baseName "Native_Libs2"
+        extension "jar"
+        from fileTree(dir: "libs", include: "**/*.so")
+        into "lib"
+    }
+
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn(nativeLibsToJar)
+    }
+
+    productFlavors {
+        user { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "test", ChannelID: "1110001"] }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    def dependencies = rootProject.ext.dependencies
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation dependencies.butterKnife
+    annotationProcessor dependencies.butterKnifeCompiler
+    implementation 'q.rorbin:badgeview:1.1.3'
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    api project(':network_api')
+    addComponent 'user'
+    addComponent 'webview'
+    addComponent 'home'
+    addComponent 'video_component'
+    addComponent 'learn_component'
+    addComponent 'logistics_component'
+}

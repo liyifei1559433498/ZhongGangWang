@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zgw.home">
+
+    <application>
+
+        <activity
+            android:name="com.zgw.home.activity.StockMapActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="行情地图"
+            android:screenOrientation="portrait" />
+
+
+
+        <activity
+            android:name="com.zgw.home.activity.TodayPriceActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="今日价格"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.zgw.home.activity.PriceSummaryActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="价格汇总界面"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.zgw.home.activity.PriceSummaryDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="价格汇总详情界面"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".activity.SelectedCityActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="定位列表"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.TodayDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="今日报价详情界面"
+            android:screenOrientation="portrait"/>
+
+    </application>
+
+</manifest>

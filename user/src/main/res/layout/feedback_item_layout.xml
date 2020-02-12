@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shapeui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+    
+    <com.zgw.base.component.ShapeTextView
+        android:id="@+id/typeTitle"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="14sp"
+        shapeui:bottomLeftRadius="4dp"
+        shapeui:bottomRightRadius="4dp"
+        shapeui:solidColor="@color/white"
+        shapeui:stroke_Color="@color/home_page_line"
+        shapeui:stroke_Width="1dp"
+        android:textColor="@color/home_text_gray"
+        shapeui:topLeftRadius="4dp"
+        android:gravity="center"
+        shapeui:topRightRadius="4dp"
+        shapeui:touchSolidColor="@color/white"/>
+        />
+
+</LinearLayout>

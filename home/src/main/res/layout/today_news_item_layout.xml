@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/timeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="18:32"
+        android:textColor="@color/home_text_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/contentTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_toRightOf="@+id/timeTv"
+        android:layout_marginLeft="15dp"
+        android:background="@color/white"
+        android:padding="4dp"
+        android:text=""
+        android:textColor="@color/home_text_gray"
+        android:textSize="14sp" />
+
+
+   <RelativeLayout
+       android:id="@+id/forwardLayout"
+       android:layout_width="70dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:gravity="center"
+       android:layout_marginTop="16dp"
+       android:layout_marginRight="16dp"
+       android:layout_below="@+id/contentTv">
+
+       <TextView
+           android:id="@+id/forward"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="转发"
+           android:textColor="@color/home_text_gray"
+           android:textSize="14sp" />
+
+       <ImageView
+           android:layout_width="20dp"
+           android:layout_height="20dp"
+           android:layout_marginRight="5dp"
+           android:layout_toLeftOf="@+id/forward"
+           android:background="@drawable/forward" />
+
+   </RelativeLayout>
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/timeTv"
+        android:layout_marginLeft="30dp"
+        android:background="@color/orange"
+        android:layout_alignBottom="@+id/forwardLayout"/>
+
+</RelativeLayout>

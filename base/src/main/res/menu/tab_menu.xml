@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/center_tab_bar_gc"
+
+        android:title="首页" />
+
+    <item
+        android:id="@+id/menu_services"
+        android:icon="@drawable/center_tab_bar_zx"
+        android:title="发现" />
+
+    <item
+        android:id="@+id/menu_logistics"
+        android:icon="@drawable/center_tab_bar_wl"
+        android:title="物流" />
+
+
+    <item
+        android:id="@+id/menu_learn"
+        android:icon="@drawable/center_tab_bar_learn"
+        android:title="学习" />
+
+    <item
+        android:id="@+id/menu_account"
+        android:icon="@drawable/center_tab_bar_gr"
+        android:title="我的" />
+</menu>

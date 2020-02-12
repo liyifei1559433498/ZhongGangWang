@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zgw.base.component.ShapeBackGroundView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shapeui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/home_page_line"
+    android:orientation="vertical"
+    shapeui:bottomLeftRadius="4dp"
+    shapeui:bottomRightRadius="4dp"
+    shapeui:topLeftRadius="4dp"
+    shapeui:topRightRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="反馈类型"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/feedCancleBtn"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/feedback_back" />
+    </RelativeLayout>
+
+
+   <com.zgw.base.component.ShapeBackGroundView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       shapeui:solidColor="@color/white"
+       shapeui:touchSolidColor="@color/white"
+       shapeui:bottomLeftRadius="8dp"
+       shapeui:bottomRightRadius="8dp"
+       shapeui:topLeftRadius="8dp"
+       shapeui:topRightRadius="8dp">
+
+       <GridView
+           android:id="@+id/gridView"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="16dp"
+           android:layout_marginRight="16dp"
+           android:layout_marginTop="20dp"
+           android:cacheColorHint="@android:color/transparent"
+           android:listSelector="@android:color/transparent"
+           android:numColumns="3"
+           android:paddingBottom="15dp"
+           android:paddingTop="15dp"
+           android:verticalSpacing="20dp">
+
+       </GridView>
+
+   </com.zgw.base.component.ShapeBackGroundView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.zgw.base.component.ShapeTextView
+            android:id="@+id/selectedBtn"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="确认选择"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            shapeui:bottomLeftRadius="8dp"
+            shapeui:bottomRightRadius="8dp"
+            shapeui:solidColor="@color/orange"
+            shapeui:topLeftRadius="8dp"
+            shapeui:topRightRadius="8dp"
+            shapeui:touchSolidColor="@color/orange" />
+    </LinearLayout>
+</com.zgw.base.component.ShapeBackGroundView>
+
+

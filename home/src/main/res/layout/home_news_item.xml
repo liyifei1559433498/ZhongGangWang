@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shapeui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemLayout"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <ImageView
+            android:id="@+id/newsPic"
+            android:layout_width="112dp"
+            android:layout_height="84dp"
+            android:scaleType="fitXY"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="191dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_alignTop="@+id/newsPic"
+            android:ellipsize="end"
+            android:lines="2"
+            android:textColor="@color/home_news_item_title_color"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/newsPic"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@+id/newsPic">
+
+            <com.zgw.base.component.ShapeTextView
+                android:id="@+id/newsState"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="期货专栏"
+                android:textColor="@color/home_news_state_color"
+                android:textSize="12sp"
+                shapeui:bottomLeftRadius="8dp"
+                shapeui:bottomRightRadius="8dp"
+                shapeui:solidColor="@color/home_news_state_bg_color"
+                shapeui:topLeftRadius="8dp"
+                shapeui:topRightRadius="8dp"
+                shapeui:touchSolidColor="@color/home_news_state_bg_color" />
+
+            <TextView
+                android:id="@+id/newTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="09:23"
+                android:textColor="@color/home_news_time_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/readPerson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:text="12 阅读"
+                android:textColor="@color/home_news_time_color"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="#F2F2F2"/>
+</LinearLayout>

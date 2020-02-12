@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">home</string>
+
+    <string name="located_city">定位城市</string>
+    <string name="hot_city">热门城市</string>
+    <string name="locating">正在定位…</string>
+    <string name="located_failed">定位失败</string>
+
+</resources>

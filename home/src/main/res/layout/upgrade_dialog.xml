@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:tag="beta_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20adsdadddddddddd.0.0"/>
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="250dp"
+            android:layout_height="110dp"
+            android:src="@drawable/app_icon"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_upgrade_cancel"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="34dp"
+            android:gravity="center"
+            android:text="取消"
+            android:tag="beta_cancel_button"
+            android:textColor="@color/home_text_gray"
+            android:background="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_upgrade_feature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv"
+            android:background="@color/white"
+            android:paddingBottom="20dp"
+            android:paddingEnd="25dp"
+            android:paddingStart="25dp"
+            android:paddingTop="20dp"
+            android:text="哈啊啊啊啊啊啊啊啊啊"
+            android:tag="beta_upgrade_feature"
+            android:textColor="@color/home_text_gray"
+            android:textSize="15dp"
+            android:visibility="gone"/>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/tv_upgrade_feature"
+            android:background="@color/home_text_gray" />
+
+        <TextView
+            android:id="@+id/tv_upgrade_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@id/line"
+            android:background="@drawable/app_icon"
+            android:gravity="center"
+            android:tag="beta_confirm_button"
+            android:visibility="visible"
+            android:text="立即升级"
+            android:textStyle="bold"
+            android:textColor="@color/home_text_gray" />
+
+        <TextView
+            android:tag="beta_upgrade_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:text="发现bug，杀了产品祭天"/>
+    </LinearLayout>
+</RelativeLayout>
